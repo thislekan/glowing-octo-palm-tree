@@ -6,7 +6,7 @@ describe("Home", () => {
   it("renders a heading", () => {
     render(<Home />);
 
-    const heading = screen.getByText("This is the new home page");
+    const heading = screen.getByText("Convert numbers to roman numerals");
 
     expect(heading).toBeInTheDocument();
   });
