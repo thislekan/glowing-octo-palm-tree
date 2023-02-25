@@ -17,11 +17,13 @@
       align-items: center;
       justify-content: flex-end;
       overflow: hidden;
+
       .outputPanel {
         font-weight: 600;
         font-size: 1.3rem;
         font-family: "Courier New", Courier, monospace;
         letter-spacing: 0.1rem;
+        text-align: right;
       }
     }
   }
