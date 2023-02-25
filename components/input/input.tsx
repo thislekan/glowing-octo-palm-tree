@@ -7,6 +7,7 @@ export const InputComponent = ({
 }: InputComponentProps) => {
   const handleChange = (e: BaseSyntheticEvent) => {
     const { value } = e.target;
+    if (value && !/^\d+$/.test(value)) return;
     setNumbers(value);
   };
   return (
