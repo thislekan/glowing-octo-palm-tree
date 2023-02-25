@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { InputComponent } from "@/components/input/input";
 
@@ -24,10 +24,12 @@ test("Typing activity on Input Component", async () => {
   await userEvent.type(input, "15");
   expect(mockFn).toHaveBeenCalled();
   expect(mockFn).toHaveBeenCalledTimes(2);
+  waitFor(() => expect(input).toHaveValue("15"));
 });
 
 test("Typing letters on Input Component", async () => {
   const { input, mockFn } = setup({ numbers: "" });
   await userEvent.type(input, "returned");
   expect(mockFn).not.toHaveBeenCalled();
+  waitFor(() => expect(input).toHaveValue(""));
 });
