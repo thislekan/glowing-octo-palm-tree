@@ -1,5 +1,6 @@
 import { BaseSyntheticEvent } from "react";
 import { InputComponentProps } from "./interface";
+import style from "@/styles/input.module.scss";
 
 export const InputComponent = ({
   numbers,
@@ -11,7 +12,7 @@ export const InputComponent = ({
     setNumbers(value);
   };
   return (
-    <div className="input-component">
+    <div className={style.inputComponent}>
       <input
         type="text"
         name="number"
