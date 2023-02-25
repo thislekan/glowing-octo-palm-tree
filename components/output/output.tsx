@@ -2,6 +2,7 @@ import { OutputComponentProps } from "./interface";
 import { useEffect, useState } from "react";
 import { numeralsMap } from "@/utils/constants";
 import { OnlyKeys } from "@/utils/interface";
+import style from "@/styles/output.module.scss";
 
 export const OutputComponent = ({ numbers }: OutputComponentProps) => {
   const [romanNumerals, setRomanNumerals] = useState("");
@@ -29,10 +30,10 @@ export const OutputComponent = ({ numbers }: OutputComponentProps) => {
   }, [numbers]);
 
   return (
-    <div className="output">
-      <div className="output__wrapper">
-        <div className="output__wrapper__panel">
-          <p className="output-panel">{romanNumerals}</p>
+    <div className={style.output}>
+      <div className={style.output__wrapper}>
+        <div className={style.output__wrapper__panel}>
+          <p className={style.outputPanel}>{romanNumerals}</p>
         </div>
       </div>
     </div>
