@@ -1,1 +1,11 @@
-export const OutputComponent = () => <h1>This is the output component</h1>;
+export const OutputComponent = () => {
+  return (
+    <div className="output">
+      <div className="output__wrapper">
+        <div className="output__wrapper__panel">
+          <p className="output-panel"></p>
+        </div>
+      </div>
+    </div>
+  );
+};
