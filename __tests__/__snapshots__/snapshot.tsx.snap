@@ -12,7 +12,7 @@ exports[`renders homepage unchanged 1`] = `
         class="home__wrapper__content"
       >
         <h1>
-          This is the new home page
+          Convert numbers to roman numerals
         </h1>
         <div
           class="output"
