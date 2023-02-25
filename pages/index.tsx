@@ -11,13 +11,13 @@ export default function Home() {
   return (
     <div className="home">
       <Head>
-        <title>Roman Numerals App</title>
+        <title>Number to Roman Numerals Converter</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="home__wrapper">
         <div className="home__wrapper__content">
-          <h1>This is the new home page</h1>
+          <h1>Convert numbers to roman numerals</h1>
           <OutputComponent numbers={numbers} />
           <InputComponent numbers={numbers} setNumbers={setNumbers} />
         </div>
