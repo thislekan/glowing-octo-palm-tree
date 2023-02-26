@@ -3,7 +3,7 @@ import { OutputComponent } from "@/components/output/output";
 
 test("Render OutputComponent without props", () => {
   const { container } = render(<OutputComponent numbers="" />);
-  const outputPanel = container.getElementsByClassName("output-panel");
+  const outputPanel = container.getElementsByClassName("outputPanel");
   expect(outputPanel.length).toEqual(1);
 });
 
