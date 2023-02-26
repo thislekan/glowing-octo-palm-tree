@@ -24,15 +24,16 @@ exports[`renders homepage unchanged 1`] = `
               class="output__wrapper__panel"
             >
               <p
-                class="output-panel"
+                class="outputPanel"
               />
             </div>
           </div>
         </div>
         <div
-          class="input-component"
+          class="inputComponent"
         >
           <input
+            class="inputComponent__inputField"
             id=""
             name="number"
             placeholder="Enter your number here"
