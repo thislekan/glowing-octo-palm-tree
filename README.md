@@ -21,4 +21,4 @@ The App's major state is kept within the Home component since the state is requi
 
 ---
 
-the url for the project can be found [here](https://glittery-piroshki-6eec08.netlify.app/)
+the url for the project can be found [here](https://wheninrome.netlify.app/)
