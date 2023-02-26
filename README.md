@@ -1,29 +1,24 @@
-# Next.js + Jest
+#### How to setup this project
 
-This example shows how to configure Jest to work with Next.js.
+Pull the project to your local machine
+run `npm install` and after the installation run `npm run dev`
+to run the test, run `npm run test`
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+#### Architectural decisions
 
-## How to Use
+The app was built with Next, Typescript & SCSS (SASS). The app is a simple app that requires at most 3 components, namely: `Home`, `InputComponent` & `OutputComponent`. The InputComponent is responsible for providing the app with the user's input (numbers). The OutputComponent displays the output (the roman numerals). In the OutputComponent, the conversion of the input to the output is done in a useEffect hook.
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
+The App's major state is kept within the Home component since the state is required in the two other components. The InputComponent & OutputComponent both maintain their own states as well. InputComponent uses the state to display error or warning messages to users when their input is not of the expected format. OutputComponent uses its own state to display the result of the input conversion.
 
-In your terminal, run the following command:
+#### Things to note
 
-```bash
-npx create-next-app --example with-jest with-jest-app
-```
+- The styling and general look of the UI is bare.
+- the focus was on functionality
 
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
+#### What can be improved?
 
-```bash
-pnpm create next-app --example with-jest with-jest-app
-```
+- the UI could be improved
 
-## Run Jest Tests
+---
 
-```bash
-npm test
-```
+the url for the project can be found [here](https://glittery-piroshki-6eec08.netlify.app/)
