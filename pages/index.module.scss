@@ -23,4 +23,22 @@
       }
     }
   }
+
+  @media screen and (min-width: 650px) {
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+
+      &__content {
+        width: 25rem;
+        height: 20rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    &__wrapper {
+      padding: 4rem;
+    }
+  }
 }
