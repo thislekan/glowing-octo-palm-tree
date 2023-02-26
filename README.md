@@ -4,6 +4,8 @@ Pull the project to your local machine
 run `npm install` and after the installation run `npm run dev`
 to run the test, run `npm run test`
 
+---
+
 #### Architectural decisions
 
 The app was built with Next, Typescript & SCSS (SASS). The app is a simple app that requires at most 3 components, namely: `Home`, `InputComponent` & `OutputComponent`. The InputComponent is responsible for providing the app with the user's input (numbers). The OutputComponent displays the output (the roman numerals). In the OutputComponent, the conversion of the input to the output is done in a useEffect hook.
