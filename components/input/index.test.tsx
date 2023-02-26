@@ -33,3 +33,43 @@ test("Typing letters on Input Component", async () => {
   expect(mockFn).not.toHaveBeenCalled();
   waitFor(() => expect(input).toHaveValue(""));
 });
+
+test("Typing 0 on Input Component", async () => {
+  const { input, mockFn } = setup({});
+  await userEvent.type(input, "0");
+  expect(mockFn).not.toHaveBeenCalled();
+  waitFor(() => expect(input).toHaveValue(""));
+
+  const warningMsg = screen.getByText("0 is not represented in Roman numerals");
+  expect(warningMsg).toBeInTheDocument();
+  expect(warningMsg).toBeVisible();
+});
+
+test("Typing more than 4 digits numbers", async () => {
+  const { input, mockFn } = setup({});
+  await userEvent.type(input, "45678");
+  expect(mockFn).toHaveBeenCalled();
+  expect(mockFn).toHaveBeenCalledTimes(5);
+
+  waitFor(() => expect(input).toHaveValue("4567"));
+  waitFor(() =>
+    expect(
+      screen.getByText("Only 4 digit numbers are allowed")
+    ).toBeInTheDocument()
+  );
+  waitFor(() =>
+    expect(screen.getByText("Only 4 digit numbers are allowed")).toBeVisible()
+  );
+
+  await userEvent.type(input, "{Backspace}{Backspace}{Backspace}{Backspace}");
+  waitFor(() =>
+    expect(
+      screen.getByText("Only 4 digit numbers are allowed")
+    ).not.toBeInTheDocument()
+  );
+  waitFor(() =>
+    expect(
+      screen.getByText("Only 4 digit numbers are allowed")
+    ).not.toBeVisible()
+  );
+});
