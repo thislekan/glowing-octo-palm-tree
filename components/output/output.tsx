@@ -8,6 +8,7 @@ export const OutputComponent = ({ numbers }: OutputComponentProps) => {
   const [romanNumerals, setRomanNumerals] = useState("");
 
   useEffect(() => {
+    if (numbers === "" && romanNumerals) return setRomanNumerals("");
     let num: number = Number(numbers);
     if (!num) return;
 
@@ -28,7 +29,7 @@ export const OutputComponent = ({ numbers }: OutputComponentProps) => {
     }
 
     setRomanNumerals(result);
-  }, [numbers]);
+  }, [numbers, romanNumerals]);
 
   return (
     <div className={style.output}>
