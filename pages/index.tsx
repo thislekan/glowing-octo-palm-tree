@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { OutputComponent } from "@/components/output/output";
 import { InputComponent } from "@/components/input/input";
-import styles from "@/pages/index.module.scss";
+import styles from "@/styles/index.module.scss";
 
 export default function Home() {
   const [numbers, setNumbers] = useState("");
