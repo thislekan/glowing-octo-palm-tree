@@ -9,19 +9,20 @@ export const OutputComponent = ({ numbers }: OutputComponentProps) => {
 
   useEffect(() => {
     let num: number = Number(numbers);
-    if (!num && num !== 0) return;
+    if (!num) return;
 
     let result: string = "";
     let key: OnlyKeys;
 
     for (key in numeralsMap) {
+      // this compares the numbers to the values in the map to determine how many times each key in the map should be repeated for a value.
       const repeatCounter: number = Math.floor(num / numeralsMap[key]);
 
       if (repeatCounter !== 0) {
         result += key.repeat(repeatCounter);
       }
 
-      num %= numeralsMap[key];
+      num %= numeralsMap[key]; // num is divided by numeralsMap[key] and the remainder is assigned to num.
 
       if (num === 0) break;
     }
